@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>STOCK CHART</title>
+	<!-- Vendors Style-->
+	<link rel="stylesheet" href="css/vendors_css.css">
+	<!-- Style-->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/custom.css">
+
+
+</head>
+
+<body class="hold-transition light-skin theme-primary sidebar-mini fixed">
+	<div id="stockInfo">
+		<div class="wrapper">
+			<header class="main-header">
+				<div class="d-flex align-items-center logo-box justify-content-start">
+					<!-- Logo -->
+					<a href="index.html" class="logo">
+						<!-- logo-->
+
+						<div class="logo-lg">
+							<span class="light-logo"><img src="image/logo-removebg-preview.png" alt="logo"></span>
+						</div>
+					</a>
+				</div>
+				<!-- Header Navbar -->
+				<nav class="navbar navbar-static-top">
+					<!-- Sidebar toggle button-->
+					<div class="navbar-custom-menu r-side">
+						<ul class="nav navbar-nav">
+							<li class="btn-group d-lg-inline-flex d-none">
+								<div class="app-menu">
+									<div class="search-bx mx-5">
+
+										<div class="input-group">
+											<input type="search" id="symbol" class="form-control"
+												placeholder="Enter stock symbol" aria-label="Search"
+												aria-describedby="button-addon2">
+											<div class="input-group-append">
+												<button class="btn" onclick="startFetching()" id="button-addon3"><i
+														data-feather="search"></i></button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="btn-group nav-item d-lg-inline-flex d-none">
+								<a href="#" data-provide="fullscreen"
+									class="waves-effect waves-light nav-link full-screen btn-primary-light"
+									title="Full Screen">
+									<i data-feather="maximize"></i>
+								</a>
+							</li>
+
+							<!-- User Account-->
+							<li class="dropdown user user-menu">
+								<a href="#" class="waves-effect waves-light dropdown-toggle btn-primary-light"
+									data-bs-toggle="dropdown" title="User">
+									<i data-feather="user"></i>
+								</a>
+								<ul class="dropdown-menu animated flipInX">
+									<li class="user-body">
+										<a class="dropdown-item" href="#"><i class="ti-user text-muted me-2"></i>
+											Profile</a>
+										<a class="dropdown-item" href="#"><i class="ti-wishlist text-muted me-2"></i> My
+											Wishlist</a>
+										<a class="dropdown-item" href="#"><i class="ti-settings text-muted me-2"></i>
+											Settings</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#"><i class="ti-lock text-muted me-2"></i>
+											Logout</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</header>
+			<!-- Content Wrapper. Contains page content -->
+			<div class="container-full">
+				<!-- Main content -->
+				<section class="content">
+					<div class="row">
+						<div class="col-12 col-xl-12">
+							<div class="customhtab_1 box-header px-0 pt-0 border-bottom-0 ">
+								<br>
+								<br>
+								<br>
+
+							</div>
+						</div>
+						<div class="col-12 col-xl-6">
+							<div class=" box-body">
+								<div class="media align-items-center p-0 Eth_box justify-content-between ">
+									<div class=" d-flex m-0">
+										<div>
+											<h2 class="mt-15 fw-700"><i class="info-item stockName"></i></h2>
+											<p class="main_font_1 mb-0 fw-500"><i class="info-item currentPrice"></i>
+												<sup>
+													<small class="text-success fw-700 info-item priceChangePercent">
+														<i class="fa fa-caret-up me-1"></i>
+													</small>
+												</sup>
+
+											</p>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="col-12 col-xl-6">
+							<div class="box box-body">
+								<div class="row g-0 py-2">
+									<div class="col-12 col-lg-4 col-md-4">
+										<div class="box-body be-1 border-light">
+											<div class="media align-items-center p-0 justify-content-between">
+
+											</div>
+											<div class=" mt-10">
+												<div class="stock-box">
+													<p class="fw-700 mb-0 fs-20 mt-30 symbol" data-symbol="^NSEI">
+														NIFTY 50
+													</p>
+													<p class="fs-16 text-fade fw-500 price">Loading...</p>
+													<a href="details.html?symbol=^NSEI" class="view-more-btn">View
+														More</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4 col-md-4 hidden-down">
+										<div class="box-body be-1 border-light">
+											<div class="media align-items-center p-0 justify-content-between">
+											</div>
+											<div class=" mt-10">
+												<div class="stock-box">
+													<p class="fw-700 mb-0 fs-20 mt-30 symbol" data-symbol="^BSESN">
+														BSE SENSEX
+													</p>
+													<p class="fs-16 text-fade fw-500 price">Loading...</p>
+													<a href="details.html?symbol=^BSESN" class="view-more-btn">View More</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4 col-md-4 d-lg-block">
+										<div class="box-body btop-1">
+											<div class="media align-items-center p-0 justify-content-between">
+											</div>
+											<div class=" mt-10">
+												<div class="stock-box">
+													<p class="fw-700 mb-0 fs-20 mt-30 symbol" data-symbol="^NSEBANK">
+														NIFTY BANK
+													</p>
+													<p class="fs-16 text-fade fw-500 price">Loading...</p>
+													<a href="details.html?symbol=^NSEBANK" class="view-more-btn">View
+														More</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-xl-12">
+							<div class="">
+								<div class="row g-0">
+									<div class="col-12 col-lg-3 col-md-6">
+										<div class="box pull-up">
+											<div class="box-body">
+												<div class="flexbox align-items-center">
+													<div>
+														<p class="no-margin fw-700 fs-16">Market Cap</p>
+													</div>
+													<div class="card-controls text-end">
+														<li class="dropdown">
+															<a data-bs-toggle="dropdown" href="#"><i
+																	class="fa fa-info-circle fs-20 text-fade"></i></a>
+															<div class="dropdown-menu dropdown-menu-end">
+																<p class="p-10 mb-0">Stock Information</p>
+															</div>
+														</li>
+													</div>
+												</div>
+												<div class=" mt-20">
+													<h2 class="fw-500 mb-0"><span class="text-fade">₹</span><i
+															class="info-item marketCap"></i>
+														<br>
+													</h2>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-3 col-md-6  hidden-down">
+										<div class="box pull-up">
+											<div class="box-body">
+												<div class="flexbox align-items-center">
+													<div>
+														<p class="no-margin fw-700 fs-16">Price Change</p>
+													</div>
+													<div class="card-controls text-end">
+														<li class="dropdown">
+															<a data-bs-toggle="dropdown" href="#"><i
+																	class="fa fa-info-circle fs-20 text-fade"></i></a>
+															<div class="dropdown-menu dropdown-menu-end">
+																<p class="p-10 mb-0">Stock Information</p>
+															</div>
+														</li>
+													</div>
+												</div>
+												<div class=" mt-20">
+													<h2 class="fw-500 mb-0"><span class="text-fade">₹</span><i
+															class=" me-1 info-item priceChange"></i>
+													</h2>
+													<br>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-3 col-md-6 d-lg-block">
+										<div class="box pull-up">
+											<div class="box-body">
+												<div class="flexbox align-items-center">
+													<div>
+														<p class="no-margin fw-700 fs-16">Volume</p>
+													</div>
+													<div class="card-controls text-end">
+														<li class="dropdown">
+															<a data-bs-toggle="dropdown" href="#"><i
+																	class="fa fa-info-circle fs-20 text-fade"></i></a>
+															<div class="dropdown-menu dropdown-menu-end">
+																<p class="p-10 mb-0">Stock Information</p>
+															</div>
+														</li>
+													</div>
+												</div>
+												<div class=" mt-20">
+													<h2 class="fw-500 mb-0"><span class="text-fade"></span> <i
+															class="info-item volume"></i>
+													</h2>
+													<br>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-3 col-md-6 d-lg-block">
+										<div class="box pull-up">
+											<div class="box-body">
+												<div class="flexbox align-items-center ">
+													<div>
+														<p class="no-margin fw-700 fs-16">24-Hour High</p>
+													</div>
+													<div class="card-controls text-end">
+														<li class="dropdown">
+															<a data-bs-toggle="dropdown" href="#"><i
+																	class="fa fa-info-circle fs-20 text-fade"></i></a>
+															<div class="dropdown-menu dropdown-menu-end">
+																<p class="p-10 mb-0">Stock Information</p>
+															</div>
+														</li>
+													</div>
+												</div>
+												<div class=" mt-20">
+													<h2 class="fw-500 mb-0"><i class="info-item high24h"></i><span
+															class="fs-30 fw-300 text-fade">
+														</span></h2>
+													<br>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-xl-9">
+							<div class="box box-body p-20">
+								<!-- Nav tabs -->
+								<hr class="mt-0 mb-20">
+								<!-- Tab panes -->
+								<div class="tab-content">
+									<div id="navpills-1" class="tab-pane active">
+										<div class="box">
+											<div class="box-header with-border p-0">
+												<ul class="nav nav-pills mb-20">
+													<li class=" nav-item"> <a href="#Overview-1" class="nav-link active"
+															data-bs-toggle="tab" aria-expanded="false">Price</a> </li>
+
+													<ul class="box-controls_1 box-tools pull-right"
+														style="padding-left: 840px;">
+														<li><a class="box-btn-slide" href="#"></a></li>
+													</ul>
+												</ul>
+											</div>
+											<div class="tab-content">
+												<div id="Overview-1" class="tab-pane active">
+													<div class="box-body pb-0">
+														<div id="stockChart" style="height:500px;width:100%;"></div>
+													</div>
+												</div>
+
+
+											</div>
+											<!-- /.box-body-->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-12">
+							<div class="box">
+								<div class="box-body">
+									<div class="flexbox align-items-center">
+										<div>
+											<div class=" d-flex m-0">
+												<div>
+													<!-- <p class=" mb-0 mt-10 fw-700 text-fade"><i class="info-item" id="stockName"></i></i></p> -->
+													<p class=" mb-0 mt-10 fw-700 text-fade">
+													<h2 class=" mb-0 mt-10 fw-700 text-fade"><i
+															class="info-item stockName"></i></h2>
+													</p>
+													<p class=" mb-0 fw-700 fs-16">Price Statistics</p>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<div class="media align-items-center p-0 justify-content-between">
+									</div>
+								</div>
+								<div class="box-body p-0">
+									<div class="table-responsive buy-sall-table">
+										<ul class="list-unstyled market-price-list">
+											<li>
+												<a href="#" class="market-pair">
+													<div class="d-flex justify-content-between align-items-center">
+														<p class="mb-0 fw-700">Price</p>
+														<p class="mb-0 fw-600"><i class="info-item currentPrice"></i>
+														</p>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#" class="market-pair">
+													<div class="d-flex justify-content-between align-items-center">
+														<p class="mb-0 fw-700">Price Change</p>
+														<p class="mb-0 fw-600">₹<i class="info-item priceChange"></i>
+														</p>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#" class="market-pair">
+													<div class="d-flex justify-content-between align-items-center">
+														<p class="mb-0 fw-700">24-Hour High</p>
+														<p class="mb-0 fw-600"><i class="info-item high24h"></i>
+														</p>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#" class="market-pair">
+													<div class="d-flex justify-content-between align-items-center">
+														<p class="mb-0  fw-700">24-Hour Low</p>
+														<p class="mb-0 fw-600"><i class="info-item low24h"></i></p>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#" class="market-pair">
+													<div class="d-flex justify-content-between align-items-center">
+														<p class="mb-0 fw-700">Volume</p>
+														<p class="mb-0 fw-600"><i class="info-item volume"></i></p>
+													</div>
+												</a>
+											</li>
+
+											<li>
+												<a href="#" class="market-pair">
+													<div class="d-flex justify-content-between align-items-center">
+														<p class="mb-0 fw-700">Market Cap</p>
+														<p class="mb-0 fw-600">₹<i class="info-item marketCap"></i></p>
+													</div>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+				</section>
+			</div>
+
+		</div>
+		<!-- Vendor JS -->
+		<script src="js/vendors.min.js"></script>
+		<script src="assets/icons/feather-icons/feather.min.js"></script>
+		<script src="js/template.js"></script>
+		<!-- Chart -->
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+		<!-- data loading -->
+		<script src="js/stockdata_india.js"></script>
+		<script src="js/overviewcard.js"></script>
+
+
+	</div>
+
+
+</body>
+
+</html>
