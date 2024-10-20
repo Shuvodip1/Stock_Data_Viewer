@@ -1,4 +1,10 @@
 {
+  "name": "stock-dekho",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "prod":"Node server.js"
+  },
   "dependencies": {
     "axios": "^1.7.2",
     "express": "^4.19.2"
