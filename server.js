@@ -17,8 +17,8 @@ app.get('/stock/:symbol', async (req, res) => {
     const period1 = Math.floor(pastDateTimeStamp / 1000);
 
     // Construct URLs
-    const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}`;
-    const urlMarketCap = `https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/${symbol}?merge=false&padTimeSeries=true&period1=${period1}&period2=${period2}&type=quarterlyMarketCap%2CtrailingMarketCap`;
+    const url = `Your API end point`;
+    const urlMarketCap = `Your API end point ?merge=false&padTimeSeries=true&period1=${period1}&period2=${period2}&type=quarterlyMarketCap%2CtrailingMarketCap`;
 
     try {
         const [response, responseMarketCap] = await Promise.all([
